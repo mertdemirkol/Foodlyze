@@ -1,5 +1,7 @@
 package com.demirkol.foodlyze;
 
+import static android.view.KeyCharacterMap.load;
+
 import android.Manifest;
 import android.annotation.SuppressLint;
 import android.content.Intent;
@@ -105,21 +107,50 @@ public class Barkodsayfasi extends AppCompatActivity {
                     binding.malzemelerMetni.setText(ingredients);
                     String marka = nullToDefault(product.getBrands());
                     binding.marka.setText(marka);
+                    String tuz=nullToDefault(product.getNutriments().getSalt());
+                    binding.tuz.setText(tuz);
+
+                    String lif =nullToDefault(product.getLiforani());
+                    binding.lif.setText(lif +" gr");
+                    String alerjen=nullToDefault(product.getAllergens());
+                    binding.alerjen.setText(alerjen);
+
+                    String transyag=nullToDefault(product.getTrans_yag());
+                    binding.doymusyag.setText(transyag);
 
                     String energy = nullToDefault(product.getNutriments().getEnergy());
+                    binding.energy.setText(energy);
                     String fat = nullToDefault(product.getNutriments().getFat());
-                    String carbs = nullToDefault(product.getNutriments().getCarbohydrates());
+                    binding.fat.setText(fat);
+                    String karbonhidrat = nullToDefault(product.getNutriments().getCarbohydrates());
+                    binding.carbohydrates.setText(karbonhidrat);
                     String sugars = nullToDefault(product.getNutriments().getSugars());
+                    binding.sugars.setText(sugars);
                     String protein = nullToDefault(product.getNutriments().getProtein());
-                    String salt = nullToDefault(product.getNutriments().getSalt());
+                    binding.proteins.setText(protein);
+
                     String nutriscore = nullToDefault(product.getNutriscoreGrade());
                     String origin = nullToDefault(product.getOrigins());
                     String quantity = nullToDefault(product.getQuantity());
+
                     String nutritionImageUrl = product.getImageUrl();
                     if (nutritionImageUrl != null && !nutritionImageUrl.isEmpty()) {
                         Glide.with(Barkodsayfasi.this)
                                 .load(nutritionImageUrl)
                                 .into(nutritionImageView);
+                    }
+                    String nutriscoredurumu=product.getNutriscoreGrade();
+                    if (nutriscoredurumu != null && !nutriscoredurumu.isEmpty()){
+                        Glide.with(Barkodsayfasi.this)
+                                .load(nutriscoredurumu)
+                                .into(binding.nutriscoredurumu);
+                    }
+
+                    String uruntablo=product.getNutritionImage(); //besin içeriği tablosu
+                    if (uruntablo != null && !uruntablo.isEmpty()){
+                        Glide.with(Barkodsayfasi.this)
+                                .load(uruntablo)
+                                .into(binding.urunicindekilerGorsel);
                     }
 
                     resultTextView.setText(
@@ -127,10 +158,10 @@ public class Barkodsayfasi extends AppCompatActivity {
                                     "\nİçerik: " + ingredients +
                                     "\nEnerji: " + energy + " kcal" +
                                     "\nYağ: " + fat + " g" +
-                                    "\nKarbonhidrat: " + carbs + " g" +
+
                                     "\nŞeker: " + sugars + " g" +
                                     "\nProtein: " + protein + " g" +
-                                    "\nTuz: " + salt + " g" +
+
                                     "\nNutriScore: " + nutriscore.toUpperCase() +
                                     "\nMenşei: " + origin +
                                     "\nMiktar: " + quantity

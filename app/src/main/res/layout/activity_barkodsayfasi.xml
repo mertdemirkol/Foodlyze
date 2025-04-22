@@ -133,14 +133,6 @@
                         android:layout_margin="10dp"
                         android:textStyle="bold"
                         android:fontFamily="@font/poppingfont"/>
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:id="@+id/malzemeler_metni"
-                        android:text="malzemeler_metni"
-                        android:textSize="15dp"
-                        android:layout_margin="10dp"
-                        android:fontFamily="@font/poppingfont"/>
 
                     <TextView
                         android:layout_width="match_parent"
@@ -153,11 +145,34 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:id="@+id/malzemeler_metni"
+                        android:text="malzemeler_metni"
+                        android:textSize="15dp"
+                        android:layout_margin="10dp"
+                        android:fontFamily="@font/poppingfont"/>
+
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
                         android:id="@+id/malzeme_etiket"
                         android:text="marka etiketi"
                         android:textSize="15dp"
                         android:layout_margin="10dp"
                         android:fontFamily="@font/poppingfont"/>
+
+                    <ImageView
+                        android:layout_width="300dp"
+                        android:layout_margin="10dp"
+                        android:layout_height="200dp"
+                        android:id="@+id/urunicindekiler_gorsel"
+                        android:src="@drawable/photoicon"
+                        android:layout_gravity="center"
+
+                        />
+
+
+
 
 
                 </LinearLayout>
@@ -238,6 +253,23 @@
                     android:textSize="15dp"
                     android:layout_margin="10dp"
                     android:fontFamily="@font/poppingfont"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/tuz"
+                    android:text="tuz oranı"
+                    android:textSize="15dp"
+                    android:layout_margin="10dp"
+                    android:fontFamily="@font/poppingfont"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/lif"
+                    android:text="lif oranı"
+                    android:textSize="15dp"
+                    android:layout_margin="10dp"
+                    android:fontFamily="@font/poppingfont"/>
 
 
             </LinearLayout>
@@ -257,7 +289,7 @@
                     android:layout_width="wrap_content"
                     android:id="@+id/beslenme_puanibaslik"
                     android:layout_height="wrap_content"
-                    android:text="Beslenme Puanı"
+                    android:text="Alerjen Analizi"
                     android:textSize="20dp"
                     android:layout_margin="10dp"
                     android:textStyle="bold"
@@ -265,14 +297,16 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:id="@+id/beslenme_puantext"
-                    android:text="10/10"
+                    android:id="@+id/alerjen"
+                    android:text="alerjen"
                     android:textSize="15dp"
                     android:layout_margin="10dp"
                     android:fontFamily="@font/poppingfont"/>
 
 
             </LinearLayout>
+
+
 
 
 

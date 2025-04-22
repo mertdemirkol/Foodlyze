@@ -14,8 +14,14 @@ public class ProductResponse {
     public class Product {
 
         // Temel bilgiler
+
         @SerializedName("product_name")
         private String productName; // Ürün adı
+
+
+
+        @SerializedName("fiber")
+        private String  liforani; //  lif oranı
 
         @SerializedName("generic_name")
         private String genericName; // Genel ürün ismi
@@ -66,6 +72,14 @@ public class ProductResponse {
 
         @SerializedName("origins")
         private String origins; // Köken bilgisi
+
+
+        @SerializedName("trans-fat")
+        private String trans_yag; // Doymuş Yağ
+
+        public String getTrans_yag() {
+            return trans_yag;
+        }
 
 
 
@@ -161,6 +175,10 @@ public class ProductResponse {
         public List<String> getCountriesTags() { return countriesTags; }
         public String getCode() { return code; }
         public List<String> getIngredientsAnalysisTags() { return ingredientsAnalysisTags; }
+        public String getLiforani() {
+            return liforani;
+        }
+
 
 
     }
