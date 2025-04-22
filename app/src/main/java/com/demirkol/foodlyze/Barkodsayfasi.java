@@ -15,6 +15,7 @@ import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
 import com.bumptech.glide.Glide;
+import com.demirkol.foodlyze.databinding.ActivityBarkodsayfasiBinding;
 import com.google.zxing.integration.android.IntentIntegrator;
 import com.google.zxing.integration.android.IntentResult;
 
@@ -27,13 +28,15 @@ public class Barkodsayfasi extends AppCompatActivity {
     private static final int CAMERA_PERMISSION_REQUEST_CODE = 100;
     private TextView resultTextView;
     private ImageView nutritionImageView;
+    private ActivityBarkodsayfasiBinding binding;
 
 
     @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_barkodsayfasi);
+        binding = ActivityBarkodsayfasiBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
 
         resultTextView = findViewById(R.id.resultTextView);
         nutritionImageView = findViewById(R.id.urunresmi);
@@ -95,7 +98,14 @@ public class Barkodsayfasi extends AppCompatActivity {
                     ProductResponse.Product product = response.body().getProduct();
 
                     String productName = nullToDefault(product.getProductName());
+                    binding.urunadi.setText(productName);
+                    String miktar = nullToDefault(product.getQuantity());
+                    binding.miktar.setText(miktar);
                     String ingredients = nullToDefault(product.getIngredientsText());
+                    binding.malzemelerMetni.setText(ingredients);
+                    String marka = nullToDefault(product.getBrands());
+                    binding.marka.setText(marka);
+
                     String energy = nullToDefault(product.getNutriments().getEnergy());
                     String fat = nullToDefault(product.getNutriments().getFat());
                     String carbs = nullToDefault(product.getNutriments().getCarbohydrates());
