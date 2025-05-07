@@ -35,7 +35,13 @@ public class Anasayfa extends AppCompatActivity {
         binding.imageslider.setImageList(slideModels,ScaleTypes.FIT);
 
 
-
+       binding.yemektarifiButton.setOnClickListener(new View.OnClickListener() {
+           @Override
+           public void onClick(View view) {
+               Intent intent= new Intent(Anasayfa.this, Yemektarifilayaout.class);
+               startActivity(intent);
+           }
+       });
 
 
         binding.scanButton.setOnClickListener(new View.OnClickListener() {

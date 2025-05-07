@@ -75,7 +75,25 @@
 
     </androidx.cardview.widget.CardView>
 
-    
+    <Button
+        android:id="@+id/yemektarifiButton"
+        android:layout_below="@id/sliderlayaout"
+        android:layout_width="match_parent"
+        android:layout_height="46dp"
+        android:background="@drawable/yemekbtn"
+        android:fontFamily="@font/poppingfont"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:textSize="18dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:elevation="20dp"
+        android:textAllCaps="false"
+        android:text="@string/yemektarifi_btn" />
+
+
+
 
     <!-- Barkod sonuçlarını gösterecek TextView -->
     <TextView
